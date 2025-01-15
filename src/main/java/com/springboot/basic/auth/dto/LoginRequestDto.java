@@ -8,4 +8,21 @@ public class LoginRequestDto {
 
     @NotBlank(message = "Password 가 입력되지않음.")
     private String userpassword;
+
+    // Getter, Setter
+    public String getUsernameOrEmail() {
+        return usernameOrEmail;
+    }
+
+    public void setUsernameOrEmail(String usernameOrEmail) {
+        this.usernameOrEmail = usernameOrEmail;
+    }
+
+    public String getUserpassword() {
+        return userpassword;
+    }
+
+    public void setUserpassword(String userpassword) {
+        this.userpassword = userpassword;
+    }
 }
