@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new IllegalArgumentException("username 또는 email이 맞지않습니다."));
 
         // 비밀번호 확인
-        if (!passwordEncoder.matches(loginRequestDto.getUserpassword(), user.getUserpassword()))
+        if (!passwordEncoder.matches(loginRequestDto.getUserPassword(), user.getUserpassword()))
             throw new IllegalArgumentException("password가 맞지않음.");
 
         // JWT Token 생성
