@@ -9,18 +9,18 @@ public class RegisterRequestDto {
     private String username;
 
     @NotBlank(message = "password 가 입력되지않음.")
-    private String userpassword;
+    private String userPassword;
 
     @NotBlank(message = "email 이 입력되지않음.")
     @Email(message = "email 형식이 아닙니다.")
-    private String useremail;
+    private String userEmail;
 
     // getter, setter
     public String getEmail() {
-        return useremail;
+        return userEmail;
     }
-    public void setUseremail(String useremail) {
-        this.useremail = useremail;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
     public String getUsername() {
@@ -32,10 +32,10 @@ public class RegisterRequestDto {
     }
 
     public String getUserPassword() {
-        return userpassword;
+        return userPassword;
     }
 
     public void setUserpassword() {
-        this.userpassword = userpassword;
+        this.userPassword = userPassword;
     }
 }
