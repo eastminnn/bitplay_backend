@@ -34,6 +34,7 @@ public class UserServiceImpl implements UserService {
         user.setUsername(registerRequestDto.getUsername());
         user.setUserpassword(passwordEncoder.encode(registerRequestDto.getUserPassword()));
         user.setUseremail(registerRequestDto.getEmail());
+        user.setRole(User.Role.valueOf("USER"));
 
         // 사용자 저장
         User savedUser = userRepository.save(user);
@@ -41,7 +42,6 @@ public class UserServiceImpl implements UserService {
         // 응답 DTO 생성
         return new RegisterResponseDto(savedUser.getId(), savedUser.getUseremail(), savedUser.getUserpassword());
     }
-
 
     @Override
     public LoginResponseDto login(LoginRequestDto loginRequestDto) {
