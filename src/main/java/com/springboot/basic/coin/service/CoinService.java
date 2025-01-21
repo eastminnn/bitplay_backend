@@ -13,6 +13,9 @@ public interface CoinService {
     // 코인 삭제
     CoinResponseDto deleteCoin(CoinResponseDto coinResponseDto);
 
+    // 코인 삭제
+    void deleteCoin(String symbol);
+
     // 전체 코인 목록 조회
     List<CoinResponseDto> getAllcoins();
 
