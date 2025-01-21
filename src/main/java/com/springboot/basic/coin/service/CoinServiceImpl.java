@@ -30,9 +30,19 @@ public class CoinServiceImpl implements CoinService{
         coin.setPrice(BigDecimal.ZERO); // 기본값 = 0
         coin.setUpdated(LocalDateTime.now());
 
+        Coin savedCoin = coinRepository.save(coin);
+        return convertToResponseDto(savedCoin);
 
     }
-
+    // 응답 DTO 생성
+    private CoinResponseDto convertToResponseDto(Coin coin) {
+        CoinResponseDto dto = new CoinResponseDto();
+        dto.setSymbol(coin.getSymbol());
+        dto.setName(coin.getName());
+        dto.setPrice(coin.getPrice());
+        dto.setUpdated(coin.getUpdated().toString());
+        return dto;
+    }
 
     @Override
     public CoinResponseDto deleteCoin(CoinResponseDto coinResponseDto) {
